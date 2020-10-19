@@ -18,7 +18,6 @@ RUN apt-get update && \
     npm \
     libxml2-dev \
     libxslt1-dev \
-    libjavascriptcoregtk \
     graphviz \
     wget \
     libyaml-dev \
@@ -28,11 +27,9 @@ RUN apt-get update && \
     git clone --depth 1 https://github.com/andresriancho/w3af.git && \
     npm install -g retire && \
     ./w3af/w3af_console || : && \
-    ls -s /usr/bin/python /usr/bin/python3.7 && \
     pip3 install pyrsistent==0.16.1 && \
-    /tmp/w3af_dependency_install.sh || :
-
-RUN wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb && \
+    /tmp/w3af_dependency_install.sh || : \
+    wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb && \
     dpkg -i python-support_1.0.15_all.deb || apt-get install -fy && \
     apt --fix-broken install && \
     wget http://ftp.cn.debian.org/debian/pool/main/p/pywebkitgtk/python-webkit_1.1.8-3_amd64.deb && \
