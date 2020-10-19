@@ -28,7 +28,7 @@ RUN apt-get update && \
     npm install -g retire && \
     ./w3af/w3af_console || : && \
     ls -s /usr/bin/python /usr/bin/python3.7 && \
-    pip3 install pyrsistent==0.16.1 && \
+    pip install pyrsistent==0.16.1 && \
     /tmp/w3af_dependency_install.sh || : \
     wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb && \
     dpkg -i python-support_1.0.15_all.deb || apt-get install -fy && \
