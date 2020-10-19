@@ -27,6 +27,7 @@ RUN apt-get update && \
     git clone --depth 1 https://github.com/andresriancho/w3af.git && \
     npm install -g retire && \
     ./w3af/w3af_console || : && \
+    ls -s /usr/bin/python /usr/bin/python3.7 && \
     pip3 install pyrsistent==0.16.1 && \
     /tmp/w3af_dependency_install.sh || : \
     wget http://ftp.cn.debian.org/debian/pool/main/p/python-support/python-support_1.0.15_all.deb && \
